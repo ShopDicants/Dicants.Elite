@@ -1,62 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decants Elite AR</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decants Elite AR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+}
+
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+h1{
+    font-size:60px;
+    color:#d4af37;
+    letter-spacing: 2px;
+}
+
+header p{
+    font-size:22px;
+    margin-top:15px;
+    max-width:700px;
+    color: #ccc;
+}
+
+.btn{
+    margin-top:35px;
+    text-decoration:none;
+    color:black;
+    background:#d4af37;
+    padding:15px 35px;
+    border-radius:40px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:#fff;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.titulo{
+    text-align:center;
+    color:#d4af37;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    color: #888;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    transition:.3s;
+    border: 1px solid #222;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+/* Contenedor para que las fotos de los perfumes queden perfectas */
+.perfume-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.brand {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+
+.card h3{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #aaa;
+    min-height: 42px;
+    margin-bottom: 15px;
+}
+
+.precio-decant {
+    font-size: 14px;
+    color: #eee;
+    margin: 5px 0;
+    font-weight: 300;
+}
+
+.precio-decant strong {
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn-card {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #fff;
+    background: #25d366;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-card:hover {
+    background: #20ba5a;
+}
+
+footer{
+    padding:60px 40px;
+    text-align:center;
+    background:#111;
+    border-top: 1px solid #222;
+}
+
+footer a{
+    color:#d4af37;
+    text-decoration:none;
+}
+
+@media(max-width:700px){
+    h1{ font-size:40px; }
+    header p{ font-size:18px; }
+    .titulo{ font-size:30px; }
+    section { padding: 60px 5%; }
+}
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <h1>Decants Elite AR</h1>
-        <p>Perfumería de lujo en formato de muestra. Originales 100%.</p>
-    </header>
+<header>
+    <h1>DECANTS ELITE AR</h1>
+    <p>Fragancias de lujo originales en formato de muestra (5ml y 10ml).</p>
+    <a class="btn" href="#catalogo">Ver Catálogo</a>
+</header>
 
-    <div class="container">
-        <div class="grid">
-            <!-- Producto 1 -->
-            <div class="card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&auto=format&fit=crop&q=60" alt="Creed Aventus">
-                </div>
-                <div class="brand">Creed</div>
-                <h3>Aventus</h3>
-                <p class="desc">Notas de piña, maderas y un toque ahumado ultra elegante.</p>
-                <div class="price">5ml: $15.000 / 10ml: $28.000</div>
-                <a href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Creed%20Aventus" class="btn-wsp" target="_blank">Pedir por WhatsApp</a>
-            </div>
+<!-- SECCIÓN CATÁLOGO -->
+<section id="catalogo">
+    <h2 class="titulo">Nuestro Catálogo</h2>
+    <p class="subtitulo-seccion">Elegí tu fragancia y pedila directamente por WhatsApp</p>
 
-            <!-- Producto 2 -->
-            <div class="card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&auto=format&fit=crop&q=60" alt="Sauvage">
-                </div>
-                <div class="brand">Dior</div>
-                <h3>Sauvage Elixir</h3>
-                <p class="desc">Especiado, licoroso y con una duración bestial.</p>
-                <div class="price">5ml: $13.500 / 10ml: $25.000</div>
-                <a href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Sauvage%20Elixir" class="btn-wsp" target="_blank">Pedir por WhatsApp</a>
-            </div>
+    <div class="cards">
 
-            <!-- Producto 3 -->
-            <div class="card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&auto=format&fit=crop&q=60" alt="Perfume">
-                </div>
-                <div class="brand">J.P. Gaultier</div>
-                <h3>Le Male Elixir</h3>
-                <p class="desc">Miel, tabaco y lavanda. Dulce, adictivo y nocturno.</p>
-                <div class="price">5ml: $11.000 / 10ml: $20.000</div>
-                <a href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Le%20Male%20Elixir" class="btn-wsp" target="_blank">Pedir por WhatsApp</a>
-            </div>
+        <!-- Perfume 1 -->
+        <div class="card">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&auto=format&fit=crop&q=60" alt="Creed Aventus">
+            <div class="brand">Creed</div>
+            <h3>Aventus</h3>
+            <p>Notas de piña, maderas y un toque ahumado ultra elegante.</p>
+            <div class="precio-decant">Decant 5ml: <strong>$15.000</strong></div>
+            <div class="precio-decant">Decant 10ml: <strong>$28.000</strong></div>
+            <a class="btn-card" href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Creed%20Aventus" target="_blank">Pedir por WhatsApp</a>
+        </div>
+
+        <!-- Perfume 2 -->
+        <div class="card">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&auto=format&fit=crop&q=60" alt="Sauvage Dior">
+            <div class="brand">Dior</div>
+            <h3>Sauvage Elixir</h3>
+            <p>Especiado, licoroso, potente y con una duración bestial.</p>
+            <div class="precio-decant">Decant 5ml: <strong>$13.500</strong></div>
+            <div class="precio-decant">Decant 10ml: <strong>$25.000</strong></div>
+            <a class="btn-card" href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Sauvage%20Elixir" target="_blank">Pedir por WhatsApp</a>
+        </div>
+
+        <!-- Perfume 3 -->
+        <div class="card">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&auto=format&fit=crop&q=60" alt="Le Male Elixir">
+            <div class="brand">J.P. Gaultier</div>
+            <h3>Le Male Elixir</h3>
+            <p>Miel, tabaco y lavanda. Dulce, adictivo y ultra nocturno.</p>
+            <div class="precio-decant">Decant 5ml: <strong>$11.000</strong></div>
+            <div class="precio-decant">Decant 10ml: <strong>$20.000</strong></div>
+            <a class="btn-card" href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Le%20Male%20Elixir" target="_blank">Pedir por WhatsApp</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECCIÓN BENEFICIOS -->
+<section style="background: #111;">
+    <h2 class="titulo">¿Por qué elegirnos?</h2>
+    <div class="cards" style="margin-top: 50px;">
+        <div class="card" style="background:#161616;">
+            <h3>✨ 100% Originales</h3>
+            <p>Todos nuestros decants se fraccionan a la vista de botellas legítimas.</p>
+        </div>
+        <div class="card" style="background:#161616;">
+            <h3>📦 Envíos Seguros</h3>
+            <p>Llegamos a todo el país con empaques ultra protegidos para que no se pierda una gota.</p>
+        </div>
+        <div class="card" style="background:#161616;">
+            <h3>🔥 Alta Calidad</h3>
+            <p>Usamos atomizadores de vidrio con spray fino para una aplicación perfecta.</p>
         </div>
     </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Decants Elite AR - Envíos a todo el país</p>
-    </footer>
+<footer>
+    <h2>Seguinos en Redes</h2>
+    <p style="margin: 15px 0 25px 0;">
+        Instagram: <a href="https://instagram.com/TU_USUARIO" target="_blank">@decantselite.ar</a>
+    </p>
+    <p>© 2026 Decants Elite AR</p>
+</footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
