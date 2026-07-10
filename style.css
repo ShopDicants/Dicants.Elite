@@ -1,1 +1,109 @@
-body{font-family:Arial;background:#111;color:#fff;text-align:center;padding:40px}h1{color:#d4af37}
+body {
+    font-family: 'Arial', sans-serif;
+    background: #111; /* Fondo negro como tenías */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #0a0a0a;
+    border-bottom: 1px solid #333;
+}
+
+h1 {
+    color: #d4af37; /* Tu dorado original */
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #aaa;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: #1a1a1a;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37; /* Brilla en dorado al pasar el mouse */
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.brand {
+    color: #d4af37;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+}
+
+.desc {
+    color: #bbb;
+    font-size: 0.9rem;
+    height: 40px; /* Alinea los textos */
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    color: #fff;
+}
+
+.btn-wsp {
+    display: block;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-wsp:hover {
+    background: #20ba5a;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #0a0a0a;
+    color: #555;
+    margin-top: 5rem;
+    border-top: 1px solid #222;
+}
