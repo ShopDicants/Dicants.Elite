@@ -3,23 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Decants Elite AR</title>
+<title>Dicants Elite AR</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
 
-body{
-    background:#0d0d0d;
-    color:white;
-}
+body{ background:#080808; color:white; overflow-x: hidden; }
 
+/* Fondo principal estilo Le Male Elixir (Oscuro/Dorado) */
 header{
     height:100vh;
     display:flex;
@@ -28,234 +21,351 @@ header{
     align-items:center;
     text-align:center;
     padding:20px;
-    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-    url("https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1400&q=80");
+    background:linear-gradient(rgba(0,0,0,.75),rgba(50,30,0,.70)),
+    url("https://images.unsplash.com/photo-1595535373192-fc8938bab596?auto=format&fit=crop&w=1400&q=80");
     background-size:cover;
     background-position:center;
 }
 
-h1{
-    font-size:60px;
-    color:#d4af37;
-    letter-spacing: 2px;
-}
-
-header p{
-    font-size:22px;
-    margin-top:15px;
-    max-width:700px;
-    color: #ccc;
-}
+h1{ font-size:65px; color:#d4af37; letter-spacing: 4px; font-weight: 700; text-transform: uppercase; }
+header p{ font-size:20px; margin-top:15px; max-width:700px; color: #e0e0e0; font-weight: 300; }
 
 .btn{
-    margin-top:35px;
-    text-decoration:none;
-    color:black;
-    background:#d4af37;
-    padding:15px 35px;
-    border-radius:40px;
-    font-weight:bold;
-    transition:.3s;
+    margin-top:35px; text-decoration:none; color:black; background:#d4af37;
+    padding:15px 40px; border-radius:40px; font-weight:bold; letter-spacing: 1px;
+    text-transform: uppercase; transition:.3s ease-in-out; cursor: pointer;
 }
+.btn:hover{ transform:scale(1.05); background:#fff; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4); }
 
-.btn:hover{
-    transform:scale(1.08);
-    background:#fff;
-}
+section{ padding:80px 10%; }
+.titulo{ text-align:center; color:#d4af37; font-size:42px; margin-bottom:10px; text-transform: uppercase; }
+.subtitulo-seccion { text-align: center; color: #888; margin-bottom: 60px; font-size: 16px; font-weight: 300; }
 
-section{
-    padding:80px 10%;
-}
-
-.titulo{
-    text-align:center;
-    color:#d4af37;
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.subtitulo-seccion {
-    text-align: center;
-    color: #888;
-    margin-bottom: 50px;
-    font-size: 16px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
+.cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; }
 
 .card{
-    background:#1a1a1a;
-    padding:25px;
-    border-radius:18px;
-    text-align:center;
-    transition:.3s;
-    border: 1px solid #222;
+    background:rgba(25, 25, 25, 0.8); backdrop-filter: blur(10px);
+    padding:30px 20px; border-radius:24px; text-align:center;
+    border: 1px solid #222; transition: .4s;
+}
+.card:hover { transform: translateY(-5px); border-color: #d4af37; }
+
+.perfume-img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.6)); }
+
+.brand { font-size: 11px; text-transform: uppercase; color: #d4af37; letter-spacing: 3px; font-weight: 600; margin-bottom: 5px; }
+.card h3{ margin-bottom: 10px; font-size: 22px; }
+.card p { font-size: 14px; color: #999; min-height: 60px; margin-bottom: 20px; font-weight: 300; line-height: 1.5; }
+
+/* Opciones de compra (5ml y 10ml) */
+.opciones-compra {
+    display: flex; justify-content: space-between; gap: 10px; border-top: 1px solid #333; padding-top: 15px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #d4af37;
+.opcion {
+    background: #1a1a1a; padding: 10px; border-radius: 12px; flex: 1; border: 1px solid #333; transition: .3s;
+}
+.opcion span { display: block; font-size: 12px; color: #aaa; margin-bottom: 5px; }
+.opcion strong { display: block; color: #fff; font-size: 16px; margin-bottom: 10px; }
+
+.btn-add {
+    background: #d4af37; color: #000; border: none; padding: 8px; width: 100%;
+    border-radius: 8px; font-weight: bold; font-size: 12px; cursor: pointer; transition: .3s;
+}
+.btn-add:hover { background: #fff; }
+
+/* Botón flotante del carrito */
+.cart-float {
+    position: fixed; bottom: 30px; right: 30px; background: #d4af37; color: black;
+    width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    font-size: 24px; cursor: pointer; box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4); z-index: 1000; transition: .3s;
+}
+.cart-float:hover { transform: scale(1.1); }
+.cart-count {
+    position: absolute; top: 0; right: 0; background: red; color: white;
+    font-size: 12px; width: 22px; height: 22px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center; font-weight: bold;
 }
 
-/* Contenedor para que las fotos de los perfumes queden perfectas */
-.perfume-img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    margin-bottom: 15px;
+/* Modal del carrito */
+.cart-modal {
+    position: fixed; top: 0; right: -400px; width: 350px; height: 100vh;
+    background: #111; z-index: 2000; padding: 30px 20px; box-shadow: -5px 0 20px rgba(0,0,0,0.8);
+    transition: right 0.4s ease; display: flex; flex-direction: column; border-left: 1px solid #333;
 }
+.cart-modal.open { right: 0; }
+.cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
+.cart-header h2 { color: #d4af37; font-size: 22px; }
+.close-cart { background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; }
+.cart-items { flex: 1; overflow-y: auto; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; background: #1a1a1a; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+.cart-item-info h4 { font-size: 14px; color: #fff; }
+.cart-item-info p { font-size: 12px; color: #aaa; margin: 0; }
+.cart-item-remove { color: red; background: none; border: none; cursor: pointer; font-size: 12px; font-weight: bold;}
+.cart-footer { border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; }
+.cart-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: bold; margin-bottom: 20px; }
+.btn-checkout { background: #d4af37; color: #000; border: none; width: 100%; padding: 15px; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; text-transform: uppercase; transition: .3s;}
+.btn-checkout:hover { background: #fff; }
 
-.brand {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #d4af37;
-    letter-spacing: 1px;
-}
-
-.card h3{
-    margin-bottom: 10px;
-    font-size: 22px;
-}
-
-.card p {
-    font-size: 14px;
-    color: #aaa;
-    min-height: 42px;
-    margin-bottom: 15px;
-}
-
-.precio-decant {
-    font-size: 14px;
-    color: #eee;
-    margin: 5px 0;
-    font-weight: 300;
-}
-
-.precio-decant strong {
-    color: #fff;
-    font-size: 18px;
-}
-
-.btn-card {
-    display: inline-block;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #fff;
-    background: #25d366;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.btn-card:hover {
-    background: #20ba5a;
-}
-
-footer{
-    padding:60px 40px;
-    text-align:center;
-    background:#111;
-    border-top: 1px solid #222;
-}
-
-footer a{
-    color:#d4af37;
-    text-decoration:none;
-}
+footer{ padding:60px 20px; text-align:center; background:#050505; border-top: 1px solid #111; }
+footer h2 { color: #d4af37; font-size: 20px; margin-bottom: 15px; }
+footer a{ color:#fff; text-decoration:none; font-weight: 600; border-bottom: 1px dashed #d4af37; padding-bottom: 2px; transition: .3s; }
+footer a:hover { color: #d4af37; }
 
 @media(max-width:700px){
-    h1{ font-size:40px; }
-    header p{ font-size:18px; }
-    .titulo{ font-size:30px; }
-    section { padding: 60px 5%; }
+    h1{ font-size:42px; }
+    .cart-modal { width: 100%; right: -100%; }
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <h1>DECANTS ELITE AR</h1>
-    <p>Fragancias de lujo originales en formato de muestra (5ml y 10ml).</p>
+    <h1>Dicants Elite AR</h1>
+    <p>La máxima exclusividad en perfumería. Tus fragancias favoritas en formato decant.</p>
     <a class="btn" href="#catalogo">Ver Catálogo</a>
 </header>
 
-<!-- SECCIÓN CATÁLOGO -->
 <section id="catalogo">
-    <h2 class="titulo">Nuestro Catálogo</h2>
-    <p class="subtitulo-seccion">Elegí tu fragancia y pedila directamente por WhatsApp</p>
+    <h2 class="titulo">Nuestras Fragancias</h2>
+    <p class="subtitulo-seccion">Elegí el tamaño que prefieras y armá tu pedido</p>
 
     <div class="cards">
 
-        <!-- Perfume 1 -->
+        <!-- Le Male Elixir -->
         <div class="card">
-            <img class="perfume-img" src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&auto=format&fit=crop&q=60" alt="Creed Aventus">
-            <div class="brand">Creed</div>
-            <h3>Aventus</h3>
-            <p>Notas de piña, maderas y un toque ahumado ultra elegante.</p>
-            <div class="precio-decant">Decant 5ml: <strong>$15.000</strong></div>
-            <div class="precio-decant">Decant 10ml: <strong>$28.000</strong></div>
-            <a class="btn-card" href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Creed%20Aventus" target="_blank">Pedir por WhatsApp</a>
-        </div>
-
-        <!-- Perfume 2 -->
-        <div class="card">
-            <img class="perfume-img" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&auto=format&fit=crop&q=60" alt="Sauvage Dior">
-            <div class="brand">Dior</div>
-            <h3>Sauvage Elixir</h3>
-            <p>Especiado, licoroso, potente y con una duración bestial.</p>
-            <div class="precio-decant">Decant 5ml: <strong>$13.500</strong></div>
-            <div class="precio-decant">Decant 10ml: <strong>$25.000</strong></div>
-            <a class="btn-card" href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Sauvage%20Elixir" target="_blank">Pedir por WhatsApp</a>
-        </div>
-
-        <!-- Perfume 3 -->
-        <div class="card">
-            <img class="perfume-img" src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&auto=format&fit=crop&q=60" alt="Le Male Elixir">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&q=80" alt="Le Male Elixir">
             <div class="brand">J.P. Gaultier</div>
             <h3>Le Male Elixir</h3>
-            <p>Miel, tabaco y lavanda. Dulce, adictivo y ultra nocturno.</p>
-            <div class="precio-decant">Decant 5ml: <strong>$11.000</strong></div>
-            <div class="precio-decant">Decant 10ml: <strong>$20.000</strong></div>
-            <a class="btn-card" href="https://wa.me/549XXXXXXXXXX?text=Hola!%20Me%20interesa%20el%20decant%20de%20Le%20Male%20Elixir" target="_blank">Pedir por WhatsApp</a>
+            <p>Una ola de calor adictiva. Notas profundas de miel, tabaco rubio y lavanda nocturna.</p>
+            <div class="opciones-compra">
+                <div class="opcion">
+                    <span>Decant 5ml</span>
+                    <strong>$11.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Le Male Elixir', '5ml', 11000)">Agregar</button>
+                </div>
+                <div class="opcion">
+                    <span>Decant 10ml</span>
+                    <strong>$20.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Le Male Elixir', '10ml', 20000)">Agregar</button>
+                </div>
+            </div>
         </div>
 
-    </div>
-</section>
+        <!-- Y Le Parfum -->
+        <div class="card">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400&q=80" alt="Y Le Parfum">
+            <div class="brand">Yves Saint Laurent</div>
+            <h3>Y Le Parfum</h3>
+            <p>Elegancia oscura y limpia. Un contraste absoluto entre lavanda vibrante y madera de cedro negro.</p>
+            <div class="opciones-compra">
+                <div class="opcion">
+                    <span>Decant 5ml</span>
+                    <strong>$12.500</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Y Le Parfum', '5ml', 12500)">Agregar</button>
+                </div>
+                <div class="opcion">
+                    <span>Decant 10ml</span>
+                    <strong>$23.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Y Le Parfum', '10ml', 23000)">Agregar</button>
+                </div>
+            </div>
+        </div>
 
-<!-- SECCIÓN BENEFICIOS -->
-<section style="background: #111;">
-    <h2 class="titulo">¿Por qué elegirnos?</h2>
-    <div class="cards" style="margin-top: 50px;">
-        <div class="card" style="background:#161616;">
-            <h3>✨ 100% Originales</h3>
-            <p>Todos nuestros decants se fraccionan a la vista de botellas legítimas.</p>
+        <!-- Le Male Le Parfum -->
+        <div class="card">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&q=80" alt="Le Male Le Parfum">
+            <div class="brand">J.P. Gaultier</div>
+            <h3>Le Male Le Parfum</h3>
+            <p>El capitán de la noche. Un aura seductora de cardamomo, iris elegante y vainilla oriental.</p>
+            <div class="opciones-compra">
+                <div class="opcion">
+                    <span>Decant 5ml</span>
+                    <strong>$11.500</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Le Male Le Parfum', '5ml', 11500)">Agregar</button>
+                </div>
+                <div class="opcion">
+                    <span>Decant 10ml</span>
+                    <strong>$21.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Le Male Le Parfum', '10ml', 21000)">Agregar</button>
+                </div>
+            </div>
         </div>
-        <div class="card" style="background:#161616;">
-            <h3>📦 Envíos Seguros</h3>
-            <p>Llegamos a todo el país con empaques ultra protegidos para que no se pierda una gota.</p>
+
+        <!-- Erba Pura -->
+        <div class="card">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&q=80" alt="Erba Pura">
+            <div class="brand">Xerjoff</div>
+            <h3>Erba Pura</h3>
+            <p>Una explosión frutal bestial. Cítricos sicilianos, almizcle blanco y pura opulencia nicho.</p>
+            <div class="opciones-compra">
+                <div class="opcion">
+                    <span>Decant 5ml</span>
+                    <strong>$18.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Erba Pura', '5ml', 18000)">Agregar</button>
+                </div>
+                <div class="opcion">
+                    <span>Decant 10ml</span>
+                    <strong>$34.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Erba Pura', '10ml', 34000)">Agregar</button>
+                </div>
+            </div>
         </div>
-        <div class="card" style="background:#161616;">
-            <h3>🔥 Alta Calidad</h3>
-            <p>Usamos atomizadores de vidrio con spray fino para una aplicación perfecta.</p>
+
+        <!-- Asad Bourbon -->
+        <div class="card">
+            <img class="perfume-img" src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&q=80" alt="Asad Bourbon">
+            <div class="brand">Lattafa</div>
+            <h3>Asad Bourbon</h3>
+            <p>Carácter y misterio. Un perfil especiado, denso y avainillado con toques de maderas oscuras.</p>
+            <div class="opciones-compra">
+                <div class="opcion">
+                    <span>Decant 5ml</span>
+                    <strong>$6.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Asad Bourbon', '5ml', 6000)">Agregar</button>
+                </div>
+                <div class="opcion">
+                    <span>Decant 10ml</span>
+                    <strong>$11.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Asad Bourbon', '10ml', 11000)">Agregar</button>
+                </div>
+            </div>
         </div>
+
+        <!-- Valentino Born In Roma (Inspiración) -->
+        <div class="card" style="border-color: #555;">
+            <div class="brand" style="color:#aaa;">Extracto de Perfumería</div>
+            <h3 style="color: #fff;">Born in Roma Intense</h3>
+            <p style="font-size:13px; color:#ccc;"><strong>Inspiración Premium.</strong> Fórmula exclusiva elaborada con aceites esenciales de máxima concentración y alcohol de perfumería fina. Garantiza una proyección épica y una similitud olfativa extraordinaria al Valentino original.</p>
+            <div class="opciones-compra">
+                <div class="opcion">
+                    <span>Decant 5ml</span>
+                    <strong>$5.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Inspiración Valentino BIR Intense', '5ml', 5000)">Agregar</button>
+                </div>
+                <div class="opcion">
+                    <span>Decant 10ml</span>
+                    <strong>$9.000</strong>
+                    <button class="btn-add" onclick="agregarAlCarrito('Inspiración Valentino BIR Intense', '10ml', 9000)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <footer>
-    <h2>Seguinos en Redes</h2>
-    <p style="margin: 15px 0 25px 0;">
-        Instagram: <a href="https://instagram.com/TU_USUARIO" target="_blank">@decantselite.ar</a>
+    <h2>Conectá con Nosotros</h2>
+    <p style="margin: 15px 0 0 0; font-weight: 300; color: #777;">
+        Pedidos y consultas directas por Instagram: <br><br>
+        <a href="https://instagram.com/dicants.elite.ar" target="_blank" style="font-size: 20px;">@dicants.elite.ar</a>
     </p>
-    <p>© 2026 Decants Elite AR</p>
 </footer>
+
+<!-- ELEMENTOS DEL CARRITO -->
+<div class="cart-float" onclick="toggleCart()">
+    🛒
+    <div class="cart-count" id="cart-count">0</div>
+</div>
+
+<div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+        <h2>Tu Pedido</h2>
+        <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+        <!-- Los items se inyectan acá por JavaScript -->
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">$0</span>
+        </div>
+        <button class="btn-checkout" onclick="enviarPedido()">Hacer Pedido en IG</button>
+    </div>
+</div>
+
+<!-- LÓGICA DEL CARRITO (JavaScript) -->
+<script>
+    let carrito = [];
+
+    function agregarAlCarrito(nombre, tamaño, precio) {
+        carrito.push({ nombre, tamaño, precio });
+        actualizarCarrito();
+        // Animación visual rápida para saber que se agregó
+        const btnCart = document.querySelector('.cart-float');
+        btnCart.style.transform = 'scale(1.2)';
+        setTimeout(() => btnCart.style.transform = 'scale(1)', 200);
+    }
+
+    function eliminarDelCarrito(index) {
+        carrito.splice(index, 1);
+        actualizarCarrito();
+    }
+
+    function toggleCart() {
+        document.getElementById('cart-modal').classList.toggle('open');
+    }
+
+    function actualizarCarrito() {
+        const contenedor = document.getElementById('cart-items');
+        const contador = document.getElementById('cart-count');
+        const totalElement = document.getElementById('cart-total-price');
+        
+        contenedor.innerHTML = '';
+        let total = 0;
+
+        if (carrito.length === 0) {
+            contenedor.innerHTML = '<p style="color:#888; text-align:center; margin-top:20px;">Tu carrito está vacío.</p>';
+        } else {
+            carrito.forEach((item, index) => {
+                total += item.precio;
+                contenedor.innerHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${item.nombre}</h4>
+                            <p>Decant ${item.tamaño} - $${item.precio.toLocaleString('es-AR')}</p>
+                        </div>
+                        <button class="cart-item-remove" onclick="eliminarDelCarrito(${index})">X</button>
+                    </div>
+                `;
+            });
+        }
+
+        contador.innerText = carrito.length;
+        totalElement.innerText = '$' + total.toLocaleString('es-AR');
+    }
+
+    function enviarPedido() {
+        if (carrito.length === 0) {
+            alert("Tu carrito está vacío. Agregá algún decant primero.");
+            return;
+        }
+
+        let textoPedido = "Hola! Quiero hacer el siguiente pedido de decants:\n\n";
+        let total = 0;
+
+        carrito.forEach(item => {
+            textoPedido += `- ${item.nombre} (${item.tamaño})\n`;
+            total += item.precio;
+        });
+
+        textoPedido += `\nTotal estimado: $${total.toLocaleString('es-AR')}\n\nMi usuario es: `;
+
+        // Copiar al portapapeles
+        navigator.clipboard.writeText(textoPedido).then(() => {
+            alert("¡Tu pedido fue copiado!\n\nSe va a abrir Instagram. Solo tenés que poner 'Pegar' en el chat y enviarnos el mensaje.");
+            // Redirigir a Instagram
+            window.open("https://ig.me/m/dicants.elite.ar", "_blank");
+        }).catch(err => {
+            alert("Hubo un error al copiar. Por favor, escribinos directo a @dicants.elite.ar");
+            window.open("https://instagram.com/dicants.elite.ar", "_blank");
+        });
+    }
+
+    // Inicializar carrito vacío
+    actualizarCarrito();
+</script>
 
 </body>
 </html>
